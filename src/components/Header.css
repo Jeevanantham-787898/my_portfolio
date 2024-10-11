@@ -1,10 +1,12 @@
 /* header.css */
 header {
-  @apply bg-gray-800 text-white p-4; /* Background, text color, padding */
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4; /* Gradient background */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: flex-end; /* Align content to the right */
 }
 
 nav ul {
-  @apply flex space-x-4; /* Flex layout and spacing */
+  @apply flex space-x-6; /* Increased spacing for larger links */
 }
 
 nav ul li {
@@ -12,5 +14,39 @@ nav ul li {
 }
 
 nav ul li a {
-  @apply hover:text-gray-300; /* Hover effect */
+  @apply text-lg hover:text-gray-300 transition duration-300 relative; /* Larger text and hover effect */
+  padding: 10px; /* Add padding for better click area */
+}
+
+/* Special effect when active */
+nav ul li a.active {
+  @apply underline font-bold; /* Underline and bold for active link */
+  position: relative; /* For the stripes effect */
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Position the stripe below the text */
+  height: 3px; /* Thickness of the stripe */
+  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0) 50%, #fff);
+  transform: translateX(-100%); /* Start off-screen */
+  transition: transform 0.5s ease; /* Smooth animation */
+}
+
+/* Stripes effect on click */
+nav ul li a.active::after {
+  transform: translateX(0); /* Move into view */
+  animation: running-stripe 0.5s forwards; /* Apply running stripes animation */
+}
+
+@keyframes running-stripe {
+  from {
+    transform: translateX(-100%); /* Start off-screen */
+  }
+  to {
+    transform: translateX(100%); /* End off-screen */
+  }
 }
