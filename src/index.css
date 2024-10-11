@@ -1,0 +1,20 @@
+/* Import the base styles, components, and utilities from Tailwind */
+@tailwind base; /* Resets and base styles */
+@tailwind components; /* Component styles, like buttons or cards */
+@tailwind utilities; /* Utility classes for styling, like margin, padding, etc. */
+
+/* Custom styles can be added below */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

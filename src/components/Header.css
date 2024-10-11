@@ -1,0 +1,16 @@
+/* header.css */
+header {
+  @apply bg-gray-800 text-white p-4; /* Background, text color, padding */
+}
+
+nav ul {
+  @apply flex space-x-4; /* Flex layout and spacing */
+}
+
+nav ul li {
+  @apply list-none; /* Remove list style */
+}
+
+nav ul li a {
+  @apply hover:text-gray-300; /* Hover effect */
+}
