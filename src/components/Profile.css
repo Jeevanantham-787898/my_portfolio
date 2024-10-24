@@ -1,0 +1,34 @@
+/* Profile Section */
+.description-container {
+  @apply bg-gray-800 text-white p-8 rounded-lg shadow-lg max-w-lg mx-auto my-12 transition-transform duration-500 ease-in-out;
+  position: relative; /* Ensure positioning for absolute elements */
+}
+
+/* Name Text */
+.name-text {
+  @apply text-5xl font-extrabold text-cyan-400 mb-4 border-b-4 border-cyan-400 inline-block pb-2;
+}
+
+/* Header styling */
+.header-text {
+  @apply text-4xl font-extrabold mb-4 text-cyan-400 border-b-4 border-cyan-400 inline-block pb-2; /* Same style as the header */
+}
+
+/* Text styling */
+.description-text {
+  @apply mb-4 text-lg leading-relaxed; /* Maintain spacing and readability */
+}
+
+/* Highlighted text (keywords like "tech enthusiast") */
+.highlight {
+  @apply font-semibold text-cyan-400; /* Keep consistent highlighting color */
+}
+
+/* Energy wave effect for profile section */
+.energy-wave-profile {
+  @apply absolute inset-0 border border-cyan-500 rounded-md opacity-0 transition-opacity duration-300; /* Energy effect */
+}
+
+.description-container:hover .energy-wave-profile {
+  @apply opacity-100; /* Show energy wave effect on hover */
+}

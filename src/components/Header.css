@@ -1,52 +1,86 @@
-/* header.css */
-header {
-  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4; /* Gradient background */
-  display: flex; /* Use flexbox for alignment */
-  justify-content: flex-end; /* Align content to the right */
+.cyber-nav-header {
+  @apply bg-gray-900 p-4 relative overflow-hidden;
+  word-spacing: 6000em; /* This creates a large space between words */
 }
 
-nav ul {
-  @apply flex space-x-6; /* Increased spacing for larger links */
+
+.circuit-board {
+  @apply absolute inset-0 opacity-10;
 }
 
-nav ul li {
-  @apply list-none; /* Remove list style */
+.circuit-line {
+  @apply absolute bg-cyan-500;
 }
 
-nav ul li a {
-  @apply text-lg hover:text-gray-300 transition duration-300 relative; /* Larger text and hover effect */
-  padding: 10px; /* Add padding for better click area */
+.cyber-nav {
+  @apply relative;
 }
 
-/* Special effect when active */
-nav ul li a.active {
-  @apply underline font-bold; /* Underline and bold for active link */
-  position: relative; /* For the stripes effect */
+.cyber-nav-links {
+  @apply flex justify-center gap-28; /* Increase gap for more space */
 }
 
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px; /* Position the stripe below the text */
-  height: 3px; /* Thickness of the stripe */
-  background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0) 50%, #fff);
-  transform: translateX(-100%); /* Start off-screen */
-  transition: transform 0.5s ease; /* Smooth animation */
+
+.cyber-nav-item {
+  @apply list-none;
 }
 
-/* Stripes effect on click */
-nav ul li a.active::after {
-  transform: translateX(0); /* Move into view */
-  animation: running-stripe 0.5s forwards; /* Apply running stripes animation */
+.cyber-link {
+  @apply relative inline-block px-4 py-2 text-lg font-bold font-mono text-white uppercase tracking-wider cursor-pointer transition-colors duration-300;
 }
 
-@keyframes running-stripe {
-  from {
-    transform: translateX(-100%); /* Start off-screen */
-  }
-  to {
-    transform: translateX(100%); /* End off-screen */
-  }
+.cyber-link:hover {
+  @apply text-cyan-400;
+}
+
+.binary-stream {
+  @apply absolute top-[-12px] left-0 text-xs text-cyan-400/50 font-mono;
+}
+
+.cyber-link-text {
+  @apply relative;
+}
+
+.glitch-text {
+  @apply absolute text-cyan-500 top-0 left-0 right-0;
+}
+
+.circuit-connection {
+  @apply absolute left-0 bottom-0 w-full h-px;
+}
+
+.connection-line {
+  @apply absolute inset-0 bg-gradient-to-r from-cyan-500 via-purple-500 to-cyan-500;
+}
+
+.connection-node {
+  @apply absolute w-1.5 h-1.5 rounded-full bg-cyan-500 translate-x-[-50%];
+}
+
+.energy-field {
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+}
+
+.cyber-link:hover .energy-field {
+  @apply opacity-100;
+}
+
+.energy-wave {
+  @apply absolute inset-0 border border-cyan-500 rounded-md;
+}
+
+.data-transfer {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+.data-dot {
+  @apply absolute w-1 h-1 rounded-full bg-cyan-500;
+}
+
+.digital-interference {
+  @apply absolute inset-0 overflow-hidden;
+}
+
+.interference-line {
+  @apply absolute w-full h-px bg-cyan-500;
 }
